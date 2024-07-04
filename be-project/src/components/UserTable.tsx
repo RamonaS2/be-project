@@ -3,10 +3,13 @@ import { User } from '../types/User';
 import { formatDate } from '../utils/formatDate';
 import { formatPhoneNumber } from '../utils/formatPhone';
 import SearchInput from './SearchInput';
+import styles from '../styles/UserTable.module.css';
 
 const UserTable: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,10 +19,12 @@ const UserTable: React.FC = () => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data); // Adicionado para depuração
         setUsers(data);
       } catch (error) {
+        setError('Erro ao buscar dados.');
         console.error('Erro ao buscar dados:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -36,17 +41,25 @@ const UserTable: React.FC = () => {
     user.phone.includes(searchTerm)
   );
 
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
-    <div>
+    <div className={styles.table}>
       <SearchInput searchTerm={searchTerm} handleSearch={handleSearch} />
       <table>
         <thead>
           <tr>
-            <th>Imagem</th>
-            <th>Nome</th>
-            <th>Cargo</th>
-            <th>Data de Admissão</th>
-            <th>Telefone</th>
+            <th className={styles.foto} >FOTO</th>
+            <th className={styles.nome}>NOME</th>
+            <th className={styles.cargo}>CARGO</th>
+            <th className={styles.data}>DATA DE ADIMISSÃO</th>
+            <th className={styles.telefone}>TELEFONE</th>
           </tr>
         </thead>
         <tbody>

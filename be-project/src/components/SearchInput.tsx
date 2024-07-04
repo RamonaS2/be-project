@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from '../styles/Searchinput.module.css';
+import iconeBusca from '../images/iconeBusca.svg'
 
 interface SearchInputProps {
   searchTerm: string;
@@ -7,12 +9,15 @@ interface SearchInputProps {
 
 const SearchInput: React.FC<SearchInputProps> = ({ searchTerm, handleSearch }) => {
   return (
-    <input
-      type="text"
-      placeholder="Pesquisar por nome, cargo ou telefone"
-      value={searchTerm}
-      onChange={handleSearch}
-    />
+    <div className={styles.searchInput}>
+      <input
+        type="text"
+        placeholder="Pesquisar"
+        value={searchTerm}
+        onChange={handleSearch}
+      />
+      <img src={iconeBusca} alt='icone de buscar'/>
+    </div>
   );
 };
 

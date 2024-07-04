@@ -1,12 +1,14 @@
 import React from 'react';
+import styles from './App.module.css';
 import UserTable from './components/UserTable';
-// import './App.css'; // Caso tenha um arquivo de estilos
+import {Header} from '../src/components/Header'
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Lista de Funcionários</h1>
-      <UserTable />
+    <div className={styles.container}>
+     <Header/>
+     <h4 className={styles.title}>Funcionários</h4>
+     <UserTable/>
     </div>
   );
 };

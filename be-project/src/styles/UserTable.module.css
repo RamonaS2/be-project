@@ -1,0 +1,110 @@
+  table {
+    width: 960px;
+    height: 499px;
+    top: 220px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;
+    margin-left: 32px;
+  }
+  
+  thead {
+    background: linear-gradient(180deg, #5A84C0 0%, #594ED2 100%);
+    color: white;
+    width: 961px;
+    height: 47px;
+    top: 172px;
+    left: 32px;
+    padding: 14px 32px 14px 32px;
+    gap: 125px;
+    border-radius: 8px 8px 0px 0px;
+    opacity: 0px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  th, td {
+    width: 960px;
+    height: 49px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+    text-align: left; 
+  }
+  
+  td {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  img {
+    width: 34px;
+    height: 34px;
+    top: 8px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .foto {
+    width: 41px;
+    height: 19px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .nome {
+    width: 46px;
+    height: 19px;
+    left: 122px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+    text-align: left;
+  }
+
+  .cargo {
+    width: 54px;
+    height: 19px;
+    left: 352px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .data {
+    width: 148px;
+    height: 19px;
+    left: 539px;
+    gap: 0px;
+    opacity: 0px;   
+  }
+
+  .telefone {
+    width: 77px;
+    height: 19px;
+    left: 755px;
+    gap: 0px;
+    opacity: 0px;
+
+  }
+  
+  tbody tr {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+  }
+  
+  tbody tr:hover {
+    background: rgba(240, 240, 240, 1);
+  }
+  
