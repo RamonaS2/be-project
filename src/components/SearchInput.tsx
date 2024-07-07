@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/Searchinput.module.css';
-import iconeBusca from '../images/iconeBusca.svg'
+import iconeBusca from '../assets/iconeBusca.svg'
 
 interface SearchInputProps {
   searchTerm: string;

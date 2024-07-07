@@ -1,42 +1,45 @@
-.tableHeadermobile { 
-  background-color: white;
+.mobileTable {
   width: 335px;
+  margin-left: 10px;
+  
 }
 
-tbody tr {
-  background: rgba(255, 255, 255, 1);
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 18.75px;
+.tableRow {
+  border: 1px solid #ddd;
+  margin-top: none;
 }
 
-.mobilethead {
+.cabeçalho {
+  display:flex;
+  text-align: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
   width: 335px;
   height: 47px;
   top: 204px;
-  border-radius: 8px 8px;
-  margin-left: 10px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  text-align: center;
+  left: 20px;
+  border-radius: 8px 8px 0px 0px;
+  background: linear-gradient(180deg, #5A84C0 0%, #594ED2 100%);
 }
 
-  .tableHeadermobile img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-  }
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+}
 
-  .tableRowmobile {
-    width: 335px;
-    height: 60px;
-  }
-  
-  .tableDetailsmobile {
-    width: 335px;
-    height: 60px;
-    background-color: #fff;
-  }
-  
-  
+.tableHeader img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.tableDetails {
+  padding: 10px;
+  background-color: #fff;
+}
+

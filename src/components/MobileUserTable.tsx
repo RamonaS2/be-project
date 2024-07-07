@@ -4,6 +4,7 @@ import { formatDate } from '../utils/formatDate';
 import { formatPhoneNumber } from '../utils/formatPhone';
 import styles from '../styles/MobileUserTable.module.css';
 import SearchInput from './SearchInput';
+import mobiletablehead from '../images/mobiletablehead.svg'
 
 interface MobileUserTableProps {
   users: User[];
@@ -25,44 +26,34 @@ const MobileUserTable: React.FC<MobileUserTableProps> = ({ users, searchTerm, ha
   );
 
   return (
-    <div className={styles.mobileTable}>
+    <div>
       <SearchInput searchTerm={searchTerm} handleSearch={handleSearch} />
-      
-        <table className={styles.mobilethead}>
-          <thead className={styles.tableHeadermobile}>
-              <tr>
-                <div>
-                  <th className={styles.thmobile}>FOTO</th>
-                  <th className={styles.thmobile}>NOME</th>
-                  <th className={styles.thmobile}>•</th>
-                </div>
-              </tr>
-          </thead>
-          <tbody>
-            
-            {filteredUsers.map(user => (
-              <tr key={user.id} className={styles.tableRowmobile}>
-                <div className={styles.tableHeadermobile} onClick={() => toggleExpand(user.id)}>
-                  <td className={styles.thmobile}><img src={user.image} alt={user.name} className={styles.employeesmobileimg} /></td>
-                  <td className={styles.thmobile}><span>{user.name}</span></td>
-                    <td className={styles.thmobile}>
-                      <button onClick={() => toggleExpand(user.id)}>
-                        {expandedUserId === user.id ? '▲' : '▼'}
-                      </button>
-                    </td>
-                </div>
-                {expandedUserId === user.id && (
-                  <div className={styles.tableDetailsmobile}>
-                    <p><strong>Cargo:</strong> {user.job}</p>
-                    <p><strong>Data de admissão:</strong> {formatDate(user.admission_date)}</p>
-                    <p><strong>Telefone:</strong> {formatPhoneNumber(user.phone)}</p>
-                  </div>
-                )}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div  className={styles.mobileTable}>
+        <div className={styles.cabeçalho}>
+          <span>FOTO</span>
+          <span>NOME</span>
+          <span>•</span>
+        </div>
+        {filteredUsers.map(user => (
+          <div key={user.id} className={styles.tableRow}>
+            <div className={styles.tableHeader} onClick={() => toggleExpand(user.id)}>
+              <img src={user.image} alt={user.name} className={styles.employeesimg} />
+              <span>{user.name}</span>
+              <button onClick={() => toggleExpand(user.id)}>
+                {expandedUserId === user.id ? '▲' : '▼'}
+              </button>
+            </div>
+            {expandedUserId === user.id && (
+              <div className={styles.tableDetails}>
+                <p><strong>Cargo:</strong> {user.job}</p>
+                <p><strong>Data de admissão:</strong> {formatDate(user.admission_date)}</p>
+                <p><strong>Telefone:</strong> {formatPhoneNumber(user.phone)}</p>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
+    </div>
   );
 };
 
