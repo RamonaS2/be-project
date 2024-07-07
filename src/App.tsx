@@ -46,7 +46,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="App">
+    <div className={styles.container}>
       <Header />
       <h4 className={styles.title}>Funcionários</h4>
       {width > 375 ? (
